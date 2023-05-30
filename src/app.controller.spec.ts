@@ -15,8 +15,14 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should be defined', () => {
+      expect(appController).toBeDefined();
+    });
+
+    it('should return the string', () => {
+      expect(appController.getGreetings()).toEqual({
+        message: 'Hello! This is an example app to play with NestJS',
+      });
     });
   });
 });
